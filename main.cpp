@@ -22,48 +22,45 @@ private:
 
 
 IntArray::~IntArray() {
-
+	delete [] data;
 }
 
 
 int IntArray::size() const{
-    return len;
+	return len;
 }
 
 
-
 int &IntArray::operator[](int i) const {
-
-    return data[i];
+	return data[i];
 }
 
 
 IntArray::IntArray(int size) {
-    len = size;
-    data = new int [len];
+	len = size;
+	data = new int [len];
 }
 
 
 void IntArray::fill(int k) {
-    for (int i=0; i<len;i++){
-
-    	data[i] = k;
+	for (int i=0; i<len;i++){
+    		data[i] = k; 
 	}
 }
 
 
 int *IntArray::begin() {
-    return data;
+	return data;
 }
 
 
 int *IntArray::end() {
-    return data + len;
+	return data + len;
 }
 
 
 int main(int arg, char * args[]) {
- IntArray a(3);
+	IntArray a(3);
         a[0] = 10;
         a[1] = 11;
         a[2] = 12;
